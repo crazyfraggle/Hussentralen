@@ -41,10 +41,14 @@
 <style>
   .floor {
     flex-grow: 1;
+    flex-basis: 1;
     position: relative;
+    margin: 0 1em;
   }
   .floorPlan {
     /* position: absolute; */
+  }
+  .lights {
   }
 </style>
 
@@ -52,13 +56,11 @@
   <h2>{head}</h2>
   <!-- <canvas bind:this={canvas} class="floorPlan" /> -->
   <h3>Lights</h3>
-  <ul>
+  <div class="lights">
     {#each lights as light}
-      <li>
-        <Light {light} />
-      </li>
+      <Light {light} />
     {/each}
-  </ul>
+  </div>
 
   <h3>Atmos</h3>
   <p>Netatmo status</p>
