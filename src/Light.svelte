@@ -2,7 +2,6 @@
   [ ] Don't query each light individually, fetch all and use the one we need
   [ ] Light interaction (on/off, color/temp, brightness)
   [ ] Hue Switch localization (it changes IP.)
-  [ ] Don't flash when reloading light data
 -->
 <script type="ts">
   import { hueUserId } from "./config";
@@ -19,16 +18,15 @@
 
   let lightData: HueLight = undefined;
 
-  fetchLightData(light).then((ld) => {
-    lightData = ld;
-    console.log(ld);
-  });
-  setInterval(() => {
+  function repeatedlyFetchLightData() {
     fetchLightData(light).then((ld) => {
       lightData = ld;
       console.log(ld);
     });
-  }, 60_000);
+    setTimeout(repeatedlyFetchLightData, 60_000);
+  }
+  repeatedlyFetchLightData();
+
   $: lightStyle =
     lightData && lightData.state.on
       ? "background-color: #aaa; color: black;"
