@@ -1,6 +1,6 @@
 <script lang="ts">
   import Calendars from "./Calendars.svelte";
-  // import YrNow from "./YrNow.svelte";
+  import YrNow from "./YrNow.svelte";
   import Floor from "./Floor.svelte";
   import Clock from "./Clock.svelte";
 </script>
@@ -39,7 +39,7 @@
     <h3>Bursdager</h3>
     <p>Even Beinlaus</p>
   </div>
-  <!-- YrNow / -->
+  <YrNow />
 </div>
 <div class="row" id="cals">
   <Calendars />
