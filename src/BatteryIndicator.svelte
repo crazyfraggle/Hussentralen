@@ -1,13 +1,18 @@
 <script>
   let batteryLevel = 1.0;
 
-  setInterval(() => {
-    if (window.navigator.getBattery) {
-      window.navigator.getBattery().then((battery) => {
-        batteryLevel = battery.level;
-      });
-    }
-  }, 300_000); // 5 minutes
+  const hasBatterySupport = !!window.navigator.getBattery;
+
+  function getBatteryState() {
+    window.navigator.getBattery().then((battery) => {
+      batteryLevel = battery.level;
+    });
+    setTimeout(getBatteryState, 60_000);
+  }
+
+  if (hasBatterySupport) {
+    getBatteryState();
+  }
 </script>
 
 <style>
@@ -27,10 +32,12 @@
   }
 </style>
 
-<div class="battery">
-  <div class="indicator">
-    <div class="level" style="width: {batteryLevel * 200}px">
-      <span class="batteryLevel">{batteryLevel * 100}%</span>
+{#if hasBatterySupport}
+  <div class="battery">
+    <div class="indicator">
+      <div class="level" style="width: {batteryLevel * 200}px">
+        <span class="batteryLevel">{batteryLevel * 100}%</span>
+      </div>
     </div>
   </div>
-</div>
+{/if}
