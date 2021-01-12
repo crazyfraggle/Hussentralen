@@ -81,7 +81,11 @@
   {#await todaysEvents}
     <p>Loading calendars</p>
   {:then events}
-    <dl class="events">
+    <dl
+      class="events"
+      on:click={() => {
+        todaysEvents = loadEventsAsync();
+      }}>
       {#each events as event}
         {#if !event.allDay}
           <dt class="timespan">

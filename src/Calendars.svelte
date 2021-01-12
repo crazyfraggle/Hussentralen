@@ -10,10 +10,6 @@
 
   let isSignedIn = false;
   let loadingGapi = true;
-  let todayStart = new Date();
-  todayStart.setHours(0, 0, 0, 0);
-  let todayEnd = new Date(todayStart);
-  todayEnd.setHours(23, 59, 59, 999);
 
   async function updateSigninStatus(isSignedInNow: boolean) {
     isSignedIn = isSignedInNow;
