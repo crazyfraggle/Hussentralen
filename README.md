@@ -18,3 +18,28 @@ Calendars.
 
 Todays weather is provided by [Yr.no](https://yr.no/). Indoor and outdoor
 measurements will be read from NetAtmo devices.
+
+## Configuration
+
+A `config.ts` file is required in `src` for the app to work. This needs to
+define the following:
+
+```typescript
+// User ID from logging in to your hue hub
+export const hueUserId: string;
+// Client ID for your google app (as this app is not released on its own)
+export const googleClientId: string;
+// Google API key
+export const googleApiKey: string;
+// Map of google calendars for the Calendars component.
+export const calendarMap = [
+  {
+    user: string,
+    calendarId: string,
+  },
+];
+// Location for YrNow weather
+export const yrLocation = { lat: number, lon: number };
+```
+
+For obvious reasons, this is not checked in to GitHub.
