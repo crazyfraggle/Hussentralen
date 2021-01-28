@@ -1,4 +1,5 @@
 // TODO: Can we subscribe to the Hue Hub?
+// TODO: How to find the Hub
 import { readable } from "svelte/store";
 import { hueUserId } from "../config";
 import type { HueLight } from "../types/HueLight";
