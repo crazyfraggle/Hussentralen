@@ -8,12 +8,12 @@
   }, 1000);
 </script>
 
+<div class="clock"><strong>{time.toLocaleTimeString()}</strong></div>
+<BatteryIndicator />
+<div class="date"><strong>{time.toLocaleDateString()}</strong></div>
+
 <style>
   div {
     font-size: 24pt;
   }
 </style>
-
-<div class="clock"><strong>{time.toLocaleTimeString()}</strong></div>
-<BatteryIndicator />
-<div class="date"><strong>{time.toLocaleDateString()}</strong></div>

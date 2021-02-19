@@ -38,20 +38,6 @@
   // });
 </script>
 
-<style>
-  .floor {
-    flex-grow: 1;
-    flex-basis: 1;
-    position: relative;
-    margin: 0 1em;
-  }
-  .floorPlan {
-    /* position: absolute; */
-  }
-  .lights {
-  }
-</style>
-
 <div class="floor">
   <h2>{head}</h2>
   <!-- <canvas bind:this={canvas} class="floorPlan" /> -->
@@ -65,3 +51,17 @@
   <h3>Atmos</h3>
   <p>Netatmo status</p>
 </div>
+
+<style>
+  .floor {
+    flex-grow: 1;
+    flex-basis: 1;
+    position: relative;
+    margin: 0 1em;
+  }
+  .floorPlan {
+    /* position: absolute; */
+  }
+  .lights {
+  }
+</style>

@@ -15,6 +15,16 @@
   }
 </script>
 
+{#if hasBatterySupport}
+  <div class="battery">
+    <div class="indicator">
+      <div class="level" style="width: {batteryLevel * 200}px">
+        <span class="batteryLevel">{batteryLevel * 100}%</span>
+      </div>
+    </div>
+  </div>
+{/if}
+
 <style>
   .indicator {
     width: 202px;
@@ -31,13 +41,3 @@
     color: black;
   }
 </style>
-
-{#if hasBatterySupport}
-  <div class="battery">
-    <div class="indicator">
-      <div class="level" style="width: {batteryLevel * 200}px">
-        <span class="batteryLevel">{batteryLevel * 100}%</span>
-      </div>
-    </div>
-  </div>
-{/if}

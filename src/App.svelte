@@ -5,6 +5,27 @@
   import Clock from "./Clock.svelte";
 </script>
 
+<div class="row" id="today">
+  <div>
+    <h3>Middag</h3>
+    <p>Luftboller og ventesuppe</p>
+    <h3>Bursdager</h3>
+    <p>Even Beinlaus</p>
+  </div>
+  <YrNow />
+</div>
+<div class="row" id="cals">
+  <Calendars />
+</div>
+<div class="row" id="rooms">
+  <Floor plan={2} />
+  <Floor plan={1} />
+  <Floor plan={0} />
+</div>
+<div class="row" id="info">
+  <Clock />
+</div>
+
 <style>
   .row {
     display: flex;
@@ -31,24 +52,3 @@
     align-items: center;
   }
 </style>
-
-<div class="row" id="today">
-  <div>
-    <h3>Middag</h3>
-    <p>Luftboller og ventesuppe</p>
-    <h3>Bursdager</h3>
-    <p>Even Beinlaus</p>
-  </div>
-  <YrNow />
-</div>
-<div class="row" id="cals">
-  <Calendars />
-</div>
-<div class="row" id="rooms">
-  <Floor plan={2} />
-  <Floor plan={1} />
-  <Floor plan={0} />
-</div>
-<div class="row" id="info">
-  <Clock />
-</div>
