@@ -1,21 +1,26 @@
 <!--
-  [ ] Light interaction (on/off, color/temp, brightness)
-  [ ] Hue Switch localization (it changes IP.)
+  [?] Light interaction (on/off, color/temp, brightness)
 -->
 <script type="ts">
-  import { lights } from "./stores/LightStore";
+  import { lights, singleLight } from "./stores/LightStore";
 
   export let light: string;
-
-  $: lightData = $lights[light];
+  const sl = singleLight(light);
+  $: lightData = $sl;
   $: lightStyle =
-    lightData && lightData.state.on
-      ? "background-color: #aaa; color: black;"
-      : "background-color: black; color: #aaa";
+    lightData &&
+    `color: ${sl.on() ? "black" : "#aaa"}; background-color: ${sl.color()}`;
+
+  $: console.log(lightStyle);
+
+  function toggleLightState() {
+    console.log("You clicked on", lightData);
+    sl.toggleOnOff();
+  }
 </script>
 
 {#if lightData}
-  <div class="light">
+  <div class="light" on:click={toggleLightState}>
     <div class="lightstate" style={lightStyle}>
       <span class="lightname">{lightData.name}</span>
     </div>
