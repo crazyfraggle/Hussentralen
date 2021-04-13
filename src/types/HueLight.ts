@@ -4,9 +4,10 @@ export interface HueLight {
     bri: number;
     ct: number;
     alert: "select";
-    colormode: "ct" | "rgb";
+    colormode: "ct" | "rgb" | "xy";
     mode: "homeautomation";
     reachable: true;
+    xy: number[];
   };
   swupdate: { state: "noupdates"; lastinstall: string };
   type: string;
@@ -32,3 +33,5 @@ export interface HueLight {
   uniqueid: string;
   swversion: string;
 }
+
+export type HueLightContainer = { [key: string]: HueLight };

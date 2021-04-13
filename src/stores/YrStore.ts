@@ -1,6 +1,6 @@
 // TODO: Make a store for retrieving Yr data regularly
 
-import { readable } from "svelte/store";
+import { derived, readable } from "svelte/store";
 import type { YrData } from "../types/YrNow";
 import { yrLocation } from "../config";
 
@@ -10,6 +10,7 @@ interface Weather {
   image: string;
   rain: number;
 }
+
 async function fetchWeatherData(): Promise<Weather> {
   const { lat, lon } = yrLocation;
   const url = `https://api.met.no/weatherapi/nowcast/2.0/complete?lat=${lat}&lon=${lon}`;
