@@ -3,15 +3,16 @@
   import YrNow from "./YrNow.svelte";
   import Floor from "./Floor.svelte";
   import Clock from "./Clock.svelte";
+  import Dinner from "./Dinner.svelte";
+  import Birthdays from "./Birthdays.svelte";
 </script>
 
 <div class="row" id="today">
   <div>
-    <h3>Middag</h3>
-    <p>Luftboller og ventesuppe</p>
-    <h3>Bursdager</h3>
-    <p>Even Beinlaus</p>
+    <Dinner />
+    <Birthdays />
   </div>
+
   <YrNow />
 </div>
 <div class="row" id="cals">
