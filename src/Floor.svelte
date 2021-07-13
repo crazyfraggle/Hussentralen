@@ -7,6 +7,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Light from "./Light.svelte";
+  import NetatmoStatus from "./NetatmoStatus.svelte";
+
   export let plan: number = 0;
   let canvas: HTMLCanvasElement;
   $: head = `${plan}. etasje`;
@@ -42,6 +44,7 @@
   <h2>{head}</h2>
   <!-- <canvas bind:this={canvas} class="floorPlan" /> -->
   <h3>Lights</h3>
+
   <div class="lights">
     {#each lights as light}
       <Light {light} />
@@ -49,7 +52,7 @@
   </div>
 
   <h3>Atmos</h3>
-  <p>Netatmo status</p>
+  <NetatmoStatus plan={plan}/>
 </div>
 
 <style>
