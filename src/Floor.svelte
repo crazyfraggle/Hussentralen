@@ -43,7 +43,6 @@
 <div class="floor">
   <h2>{head}</h2>
   <!-- <canvas bind:this={canvas} class="floorPlan" /> -->
-  <h3>Lights</h3>
 
   <div class="lights">
     {#each lights as light}
@@ -51,8 +50,7 @@
     {/each}
   </div>
 
-  <h3>Atmos</h3>
-  <NetatmoStatus plan={plan}/>
+  <NetatmoStatus {plan} />
 </div>
 
 <style>
