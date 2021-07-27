@@ -4,6 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "prettify": "prettier -cw src",
     "start": "sirv public",
     "validate": "svelte-check"
   },
