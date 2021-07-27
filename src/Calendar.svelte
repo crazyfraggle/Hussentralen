@@ -2,7 +2,6 @@
   [ ] Styling with style
   [ ] Show day in sequence for multi-day events
   [ ] Better loading indicator
-  [ ] Skip allEvents creation.
 -->
 <script type="ts">
   import { calendarPromise } from "./stores/CalendarStore";
@@ -50,6 +49,11 @@
   }
 
   .events {
+    margin: 0;
+  }
+
+  .events dd,
+  .events dt {
     margin: 0;
   }
 

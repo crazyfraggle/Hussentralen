@@ -1,4 +1,5 @@
 // TODO: Can we subscribe to the Hue Hub?
+// TODO: Cache result to avoid polling delay
 import { derived, writable } from "svelte/store";
 import { hueUserId } from "../config";
 import type { HueLightContainer } from "../types/HueLight";
